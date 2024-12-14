@@ -9,9 +9,25 @@ const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="UserList">
-        <Stack.Screen name="UserList" component={UserList} />
-        <Stack.Screen name="UserDetails" component={UserDetails} />
+      <Stack.Navigator
+        initialRouteName="UserList"
+        screenOptions={{
+          headerStyle: { backgroundColor: '#3c8d99' },
+          headerTintColor: '#fff',
+          headerTitleAlign: 'center',
+          headerTitleStyle: { fontWeight: 'bold' },
+        }}
+      >
+        <Stack.Screen 
+          name="UserList" 
+          component={UserList} 
+          options={{ title: 'Tap n View - User List' }} 
+        />
+        <Stack.Screen 
+          name="UserDetails" 
+          component={UserDetails} 
+          options={{ title: 'Tap n View - User Details' }} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
